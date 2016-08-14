@@ -11,3 +11,11 @@ button.addEventListener('click', function(event){
   newListElements[newListElements.length -1].className = "item";
   query('input#taskadd').value = "";
 })
+
+var items = query('ul.listitems');
+console.log(items);
+
+items.addEventListener('click', function(event){
+// Why does target work for this,but not eventTarget?
+  event.target.remove();
+})
