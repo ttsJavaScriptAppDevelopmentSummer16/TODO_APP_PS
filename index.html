@@ -20,7 +20,8 @@
         </ul>
       </div>
       <div class="taskadd">
-        <form class="taskadd" action="index.html" method="post">
+<!-- Setting onsubmit="return false" prevents the default behavior of submitting the form and refresing page -->
+        <form class="taskadd" action="index.html" method="post" onsubmit="return false">
           <!-- Enter New Task:<br> -->
           <input type="text" name="newtask" value = "" placeholder="Enter New Task Here" id="taskadd">
           <button type="button" name="submit" value = "submit" id="taskadd">Submit</button>
