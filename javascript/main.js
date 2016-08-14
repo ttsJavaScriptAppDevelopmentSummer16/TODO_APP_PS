@@ -30,6 +30,8 @@ input.addEventListener('mouseenter', function(event){
 input.addEventListener('keyup',function(event){
   if (event.keyCode === 13){
     addToDo();
+    event.target.value = "";
+    event.target.placeholder = "Enter New Task Here";
   }
 })
 
@@ -39,5 +41,8 @@ var items = query('ul.listitems');
 items.addEventListener('click', function(event){
 // Why does target work for this,but not eventTarget?
 // Is eventTarget for the parent element and target is (this)?
-  event.target.remove();
+  event.target.style.textDecoration = 'line-through';
+  setTimeout(function(){
+    event.target.remove();
+  },1000);
 })
