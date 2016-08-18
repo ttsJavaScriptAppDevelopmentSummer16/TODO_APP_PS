@@ -2,7 +2,7 @@ var query = document.querySelector.bind(document);
 var queryAll = document.querySelectorAll.bind(document);
 var button = query('button#taskadd');
 
-
+// Adding function so as not to repeat function being used multiple times
 function addToDo(){
   var newTask = document.createElement('li');
   newTask.innerHTML = query('input#taskadd').value
@@ -13,7 +13,7 @@ function addToDo(){
   query('input#taskadd').placeholder = "Enter New Task Here";
 }
 
-// Listener for when an a task is entered and submitted via the submit button
+// Listener for when a task is entered and submitted via the submit button
 button.addEventListener('click', function(event){
   addToDo();
 })
@@ -30,8 +30,6 @@ input.addEventListener('mouseenter', function(event){
 input.addEventListener('keyup',function(event){
   if (event.keyCode === 13){
     addToDo();
-    event.target.value = "";
-    event.target.placeholder = "Enter New Task Here";
   }
 })
 
